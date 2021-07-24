@@ -1,0 +1,391 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    scroll-behavior: smooth;
+}
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+.container section{
+    min-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161616;
+    color:#fff;
+}
+.container section .visibleArea #text span{
+    position: relative !important;
+    display:  inline-block !important;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+.container section .visibleArea{
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+}
+.container section .visibleArea #text span:nth-child(6){
+    color: aqua;
+}
+.scroll{
+    position: absolute;
+    left: 0%;
+    bottom: 5%;
+    width: 100%;
+    animation: blinkScroll 2s infinite ease-in-out;
+
+}
+@keyframes blinkScroll{
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.scroll img{
+    width: 50px;
+    height: 50px;
+}
+
+/* page3 for clock */
+
+.watch{
+    margin: 50px 0;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./clock3.png");
+    background-size: cover;
+    border: 4px solid #252525;
+    box-shadow:  0px -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0px -15px 15px rgba(255, 255, 255, 0.05),
+                00px 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0px 15px 15px rgba(0, 0, 0,0.3);
+    border-radius: 50%;
+}
+.watch::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 10000;
+}
+.watch .hours,
+.watch .minutes,
+.watch .seconds{
+    position: absolute;
+}
+.watch .hours, .hour{
+    width: 150px;
+    height: 150px;
+}
+.watch .minutes, .min{
+    width: 190px;
+    height: 190px;
+}
+.watch .seconds, .sec{
+    width: 230px;
+    height: 230px;
+}
+.hour,.min,.sec{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 500ms ease;
+}
+.hour::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background-color: aqua;
+    border-radius: 5px 5px 0 0;
+    z-index: 10;
+}
+.min::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: rgb(240, 241, 241);
+    border-radius: 5px 5px 0 0;
+    z-index: 11;
+}
+.sec::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px 5px 0 0;
+    z-index: 12;
+}
+
+/* page4 for Stopwatch */
+
+
+.container section .visibleArea #displayScreen{
+    margin: 20px 0; 
+    color: aqua;
+    /* width: 100%; */
+    font-size: 72px;
+    padding: 20px;
+    border: 4px solid #252525;
+    border-radius: 5%;
+    /* border-radius: 50px; */
+    box-shadow: 20px 20px 60px #1d1d1d,
+                inset 0px -15px 15px rgba(255, 255, 255, 0.05),
+                -20px -20px 60px #1d1d1d,
+                inset 0px 15px 15px rgba(0, 0, 0,0.3);
+
+}
+ #startStop,#reset{
+     margin: 150px 15px 40px 15px;
+     padding: 10px 35px 10px 35px;
+     min-height: 50px;
+     border: none;
+     border-radius: 15px;
+     background: #1d1d1d;
+     color: white;
+     box-shadow: -7px -7px 20px 0px #1d1d1d,
+                 -4px -4px 5px 0px #1d1d1d,
+                 7px 7px 20px 0px #0002,
+                 4px 4px 5px 0px #0001,
+                               inset 0px 0px 0px 0px #1d1d1d,
+                 inset 0px 0px 0px 0px #0001,
+                 inset 0px 0px 0px 0px #1d1d1d,
+                 inset 0px 0px 0px 0px #0001;
+     font-size: 1rem;
+     cursor: pointer;
+}
+#startStop:focus,#reset:focus{
+    box-shadow:0px 0px 0px 0px #1d1d1d,
+               0px 0px 0px 0px #1d1d1d,
+               0px 0px 0px 0px #0001,
+               0px 0px 0px 0px #0001,
+               inset -7px -7px 20px 0px #1d1d1d,
+               inset -4px -4px 5px 0px #1d1d1d,
+               inset 7px 7px 20px 0px #0003,
+               inset 4px 4px 5px 0px #0001;
+}
+
+/* page5 for about us  */
+.visibleAreaSec5{
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.visibleAreaSec5 .aboutUs{
+    width: fit-content;
+    position: absolute;
+    top: 18%;
+    text-align: center;
+    font-size: 1.45rem;
+    letter-spacing: 2px;
+    padding: 13px;
+    margin: 15px;
+}
+
+.visibleAreaSec5 p{
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+    padding: 25px;
+}
+
+/*page6 contact us  */
+.contactUs h2{
+    margin-bottom: 2%;
+    letter-spacing: 2px;
+}
+.contactUs h2 span{
+    color: aqua;
+}
+.contactUs p{
+    margin-bottom: 10%;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+    padding: 25px;
+    margin-top: 10%;
+}
+.wrapper{
+    display: inline-flex;
+}
+.wrapper .icon{
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.wrapper .icon span{
+    height: 50px;
+    width: 50px;
+    display: block;
+    background: #1d1d1d;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+.wrapper .icon span svg{
+    line-height: 60px;
+    font-size: 25px;
+    position: relative;
+    top: 12px;
+}
+.wrapper .icon .tooltip{
+    position: absolute;
+    top: -60px;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 18px;
+    border-radius: 25px;
+    box-shadow:  0 10px 10px rgba(0, 0, 0, 0.1) ;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(.29,.52,1,.81);
+}
+.wrapper .icon:hover .tooltip{
+    opacity: 1;
+    pointer-events: auto;
+}
+.wrapper .icon .tooltip::before{
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    background-color: rgb(0, 0, 0);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+.bottom-footer{
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+.bottom-footer a{
+    text-decoration: none;
+    color: cornsilk;
+    opacity: .5;
+}
+
+
+/* page2 */
+.container section:nth-child(2){
+    background: url("./alvaro-bernal-RgIKRYhmG2k-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  background-size: cover;
+    color: cornsilk;
+   
+}
+.section2Heading{
+    word-spacing: 2px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 22px;
+    width: 550px;
+}
+
+
+@media only screen 
+   and (max-width : 800px) {
+    .container section .visibleArea #text span{
+        font-size: 2rem;
+    }
+    .watch{
+        width:200px;
+        height: 200px;
+    }
+    .hour::before{
+        width: 8px;
+        height: 50px;
+    }
+    .min::before{
+        width: 4px;
+        height: 80px;
+    }
+    .sec::before{
+        width: 4px;
+        height: 90px;
+    }
+    .watch .hours, .hour{
+        width: 150px;
+        height: 110px;
+    }
+    .watch .minutes, .min{
+        width: 160px;
+        height: 160px;
+    }
+    .watch .seconds, .sec{
+        width: 130px;
+        height: 130px;
+    }
+    .container section .visibleArea #displayScreen{
+        font-size: 30px;
+    }
+    #startStop,#reset{
+        margin: 150px 5px 10px;
+        padding: 10px 35px 10px 35px;
+    }
+    .visibleAreaSec5{
+        width: 100vw;
+    }
+    .visibleAreaSec5 .aboutUs{
+        width: fit-content;
+      height: 100px;
+      position: absolute;
+      top: 10%;
+    }
+    .visibleAreaSec5 p{
+        display: flex;
+        height: 50%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        line-height: 25px;
+        padding: 20px;
+    }
+    .visibleAreaSec5 p span{
+        display: none;
+    }
+    .container section:nth-child(2){
+        word-spacing: 2px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        line-height: 22px;
+    }
+    .section2Heading{
+        width: 300px;
+    }
+}
